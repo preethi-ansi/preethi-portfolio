@@ -2,238 +2,220 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Preethi Anselin J | Data Analyst Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Open Sans', sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
+      background-color: #101010;
+      color: #f5f5f5;
       line-height: 1.6;
-      background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
     }
 
     header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 80vh;
-      background-image: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(168, 255, 96, 0.1));
       text-align: center;
-      padding: 2rem;
+      padding: 3rem 1rem;
+      background: linear-gradient(135deg, #1e1e1e, #232323);
     }
 
     header h1 {
       font-family: 'Montserrat', sans-serif;
       font-size: 2.8rem;
-      color: #A8FF60;
-      margin-bottom: 1rem;
+      color: #00ffff;
     }
 
     header p {
-      font-size: 1.2rem;
-      max-width: 700px;
+      font-size: 1.1rem;
+      max-width: 750px;
+      margin: 1rem auto;
+    }
+
+    .btn {
+      background: #00ffff;
+      color: #000;
+      padding: 0.8rem 1.6rem;
+      border: none;
+      border-radius: 6px;
+      margin-top: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,255,255,0.3);
     }
 
     nav {
       display: flex;
       justify-content: center;
       gap: 2rem;
-      background-color: #1a1a1a;
+      background-color: #181818;
       padding: 1rem;
       position: sticky;
       top: 0;
-      z-index: 999;
+      z-index: 10;
     }
 
     nav a {
-      color: #00FFFF;
-      text-decoration: none;
+      color: #00ffff;
       font-weight: bold;
-      transition: color 0.3s;
+      text-decoration: none;
     }
 
     nav a:hover {
-      color: #A8FF60;
+      color: #a8ff60;
     }
 
     section {
       padding: 4rem 1rem;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
-      animation: fadeIn 1s ease-in-out;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .btn {
-      background: #00FFFF;
-      color: #000;
-      padding: 0.8rem 1.6rem;
-      border: none;
-      border-radius: 5px;
-      margin-top: 1rem;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0, 255, 255, 0.4);
-      transition: transform 0.2s;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
+    h2.section-title {
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      color: #00ffff;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #00ffff;
+      padding-bottom: 0.5rem;
+      display: inline-block;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
+      margin-top: 2rem;
     }
 
     .card {
-      background-color: #2E2E2E;
-      padding: 1.5rem;
+      background: linear-gradient(145deg, #1e1e1e, #292929);
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,255,255,0.2);
-      transition: transform 0.3s;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.15);
+      padding: 1.5rem;
+      transition: transform 0.4s;
     }
 
     .card:hover {
       transform: scale(1.03);
     }
 
-    h2 {
+    .card h3 {
       font-family: 'Montserrat', sans-serif;
-      color: #A8FF60;
-      margin-bottom: 1rem;
-      text-align: center;
+      margin-bottom: 0.5rem;
+      color: #a8ff60;
     }
 
-    .education-info p {
-      margin: 0.5rem 0;
+    .card p {
+      font-size: 0.95rem;
+      color: #ddd;
+    }
+
+    .card img {
+      width: 100%;
+      margin-top: 1rem;
+      border-radius: 6px;
+    }
+
+    #contact p {
+      text-align: center;
+      font-size: 1rem;
+      margin-top: 1rem;
     }
 
     footer {
       text-align: center;
       padding: 1rem;
-      background-color: #1a1a1a;
-      color: #888;
-    }
-
-    /* New Styles for About, Achievement, and Contact Cards */
-    .about-box, .achievement-box, .contact-box {
-      background: linear-gradient(135deg, rgba(0,255,255,0.05), rgba(168,255,96,0.05));
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(168, 255, 96, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      margin-top: 2rem;
-    }
-
-    .about-box:hover, .achievement-box:hover, .contact-box:hover {
-      transform: scale(1.03);
-      box-shadow: 0 6px 20px rgba(0, 255, 255, 0.3);
-    }
-
-    ul {
-      padding-left: 1.2rem;
-      list-style-type: '💡 ';
-    }
-
-    a {
-      color: #00FFFF;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: #A8FF60;
+      background-color: #181818;
+      color: #aaa;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Preethi Anselin J</h1>
-    <p>A passionate Data Analyst skilled in Tableau, Python, SQL, and Power BI, transforming raw data into impactful insights and visual stories.</p>
-    <a href="Preethi Anselin (1).pdf" class="btn" target="_blank">View Resume</a>
-  </header>
 
-  <nav>
-    <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<header>
+  <h1>Preethi Anselin J</h1>
+  <p>Data Analyst skilled in Tableau, SQL, Python & Power BI. Passionate about visual storytelling and data-driven solutions.</p>
+  <a href="Preethi Anselin (1).pdf" class="btn" target="_blank">View Resume</a>
+</header>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Online Retail Dashboard (Tableau)</h3>
-        <p>Built a comprehensive Tableau dashboard using retail transaction data. Features include visual insights on sales, customer trends, and demand forecasting across multiple countries.</p>
-      </div>
-      <div class="card">
-        <h3>Career Craftor</h3>
-        <p>A dynamic interview preparation platform that provides tailored questions and preparation guides for top MNCs based on job roles. Integrates real-time mock interviews and personalized tips.</p>
-      </div>
-      <div class="card">
-        <h3>Agri Predictor</h3>
-        <p>An ML-based system that forecasts crop pricing based on weather, demand, and historic patterns. Provides a visual dashboard to help farmers make better market decisions.</p>
-      </div>
+<nav>
+  <a href="#academic">Academic Projects</a>
+  <a href="#data">Data Analyst Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#education">Education</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="academic">
+  <h2 class="section-title">Academic Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Career Craftor</h3>
+      <p>AI-powered platform that helps users practice company-specific mock interviews. Uses job role-based filtering and delivers prep guides with resources.</p>
     </div>
-  </section>
-
-  <section id="education">
-    <h2>Education</h2>
-    <div class="education-info">
-      <p><strong>College:</strong> SNS College of Engineering</p>
-      <p><strong>Major:</strong> Artificial Intelligence and Data Science</p>
-      <p><strong>Duration:</strong> September 2021 - May 2025</p>
-      <p><strong>Relevant Coursework:</strong> Machine Learning, Python, SQL, Data Visualization</p>
-      <p><strong>Certifications:</strong> Data Analytics Virtual Internship (Deloitte, Tata), IBM Data Fundamentals</p>
+    <div class="card">
+      <h3>Spam Slam</h3>
+      <p>Email spam detection model built using NLP and ensemble ML algorithms. Published in IJNRD with real-time classification and user reporting feature.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="about-box">
-      <p>✨ Hi, I'm <strong>Preethi Anselin</strong> – a data explorer and visual storyteller. I turn messy data into crystal-clear dashboards and insights using tools like <strong>Tableau, Power BI, Python, and SQL</strong>.</p>
-      <p>🎓 A proud AI & Data Science student at SNS College of Engineering (2021–2025), I've crafted real-world projects across industries – from agriculture to e-commerce analytics.</p>
-      <p>📊 My passion? Making data talk! Whether predicting trends or designing dashboards, I love solving problems through visuals and logic.</p>
+<section id="data">
+  <h2 class="section-title">Data Analyst Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Retail Sales Insights 2011</h3>
+      <p>Analyzed sales data using Tableau to generate insights into monthly revenue trends, top countries (excluding the UK), and customer behaviors.</p>
+      <img src="Retail Sales Insights 2011.png" alt="Retail Sales Dashboard" />
     </div>
-
-    <h2>Achievements</h2>
-    <div class="achievement-box">
-      <ul>
-        <li>🏫 Conducted bootcamps on <strong>Design Thinking</strong> in schools to spark creative problem-solving.</li>
-        <li>📱 Hosted workshops on <strong>MIT App Inventor</strong> for 1st-year engineering students, guiding them to build no-code mobile apps.</li>
-        <li>📄 <em>“Spam Slam”</em> – Published a research paper on spam email classification using ML (IJNRD, May 2024).</li>
-        <li>🧠 <em>“Career Craftor”</em> – Co-authored a paper on AI-powered interview prep systems (IJSREM, Apr 2025).</li>
-      </ul>
+    <div class="card">
+      <h3>Superstore Sales</h3>
+      <p>Created a performance dashboard to identify regional sales performance, top categories, and profit trends for decision making using Tableau.</p>
+      <img src="Superstore Sales.png" alt="Superstore Sales Dashboard" />
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact-box">
-      <p>📧 <strong>Email:</strong> <a href="mailto:preethiansi08@gmail.com">preethiansi08@gmail.com</a></p>
-      <p>📱 <strong>Phone:</strong> <a href="tel:+916383670965">+91 63836 70965</a></p>
-      <p>🔗 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/preethi-anselin-47b130219" target="_blank">preethi-anselin</a></p>
-      <p>💻 <strong>GitHub:</strong> <a href="https://github.com/" target="_blank">github.com</a></p>
+<section id="skills">
+  <h2 class="section-title">Skills</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>AI / ML</h3>
+      <p>Python, Scikit-learn, TensorFlow, Keras, NLP, CNN, Decision Trees, SVM, Random Forest</p>
     </div>
-  </section>
+    <div class="card">
+      <h3>AI / DS</h3>
+      <p>Data Cleaning, Feature Engineering, Pandas, Numpy, Data Visualization, Model Evaluation</p>
+    </div>
+    <div class="card">
+      <h3>Data Analyst</h3>
+      <p>Tableau, Power BI, Excel, SQL, Data Interpretation, Dashboard Creation, Business Intelligence</p>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    &copy; 2025 Preethi Anselin J. All rights reserved.
-  </footer>
+<section id="education">
+  <h2 class="section-title">Education</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>B.Tech in Artificial Intelligence and Data Science</h3>
+      <p>SNS College of Engineering <br/>Graduation Month - Year: May - 2025<br/>GPA: 8.43</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <p>📧 <a href="mailto:preethiansi08@gmail.com" style="color:#00ffff;">preethiansi08@gmail.com</a> | 📱 +91 63836 70965</p>
+</section>
+
+<footer>
+  &copy; 2025 Preethi Anselin J. All rights reserved.
+</footer>
+
 </body>
 </html>
