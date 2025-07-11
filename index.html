@@ -13,6 +13,15 @@
       background-color: #101010;
       color: #f5f5f5;
       line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+
+    #tsparticles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
     }
 
     header {
@@ -43,6 +52,11 @@
       font-weight: bold;
       text-decoration: none;
       box-shadow: 0 4px 10px rgba(0,255,255,0.3);
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #a8ff60;
     }
 
     nav {
@@ -95,11 +109,12 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 255, 255, 0.15);
       padding: 1.5rem;
-      transition: transform 0.4s;
+      transition: transform 0.4s, box-shadow 0.3s;
     }
 
     .card:hover {
-      transform: scale(1.03);
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.25);
     }
 
     .card h3 {
@@ -136,10 +151,13 @@
 </head>
 <body>
 
+<!-- Animated Background -->
+<div id="tsparticles"></div>
+
 <header>
   <h1>Preethi Anselin J</h1>
   <p>Data Analyst skilled in Tableau, SQL, Python & Power BI. Passionate about visual storytelling and data-driven solutions.</p>
-  <a href="Preethi Anselin (1).pdf" class="btn" target="_blank">View Resume</a>
+  <a href="Preethi Anselin.pdf" class="btn" target="_blank">View Resume</a>
 </header>
 
 <nav>
@@ -169,13 +187,28 @@
   <div class="grid">
     <div class="card">
       <h3>Retail Sales Insights 2011</h3>
-      <p>Analyzed sales data using Tableau to generate insights into monthly revenue trends, top countries (excluding the UK), and customer behaviors.</p>
-      <img src="Retail Sales Insights 2011.png" alt="Retail Sales Dashboard" />
+      <p>Analyzed online retail sales to uncover monthly revenue trends, top 10 countries (excluding the UK), top customers, and high-demand products.</p>
+      <img src="retail-dashboard.png" alt="Retail Sales Dashboard" />
     </div>
     <div class="card">
       <h3>Superstore Sales</h3>
-      <p>Created a performance dashboard to identify regional sales performance, top categories, and profit trends for decision making using Tableau.</p>
-      <img src="Superstore Sales.png" alt="Superstore Sales Dashboard" />
+      <p>Created a Tableau dashboard to analyze sales by region, top-selling products, and profit breakdown to help optimize strategy and operations.</p>
+      <img src="superstore-dashboard.png" alt="Superstore Sales Dashboard" />
+    </div>
+    <div class="card">
+      <h3>Netflix Viewing Analytics</h3>
+      <p>Queried Netflix data using SQL and visualized content trends by genre, release year, and top-producing countries with Tableau dashboards.</p>
+      <img src="netflix-dashboard.png" alt="Netflix Viewing Analytics Dashboard" />
+    </div>
+    <div class="card">
+      <h3>Pizza Sales Dashboard</h3>
+      <p>Explored 50,000+ transactions to identify top-selling pizzas and revenue patterns using Excel pivot charts and clean business visuals.</p>
+      <img src="pizza-dashboard.png" alt="Pizza Sales Dashboard" />
+    </div>
+    <div class="card">
+      <h3>Coursera Courses Dashboard</h3>
+      <p>Built in Power BI, this dashboard explores Coursera course trends, including ratings, review counts, and distribution of course levels and certificate types to aid platform decision-making.</p>
+      <img src="Coursera.PNG" alt="Coursera Courses Dashboard" />
     </div>
   </div>
 </section>
@@ -203,19 +236,44 @@
   <div class="grid">
     <div class="card">
       <h3>B.Tech in Artificial Intelligence and Data Science</h3>
-      <p>SNS College of Engineering <br/>Graduation Month - Year: May - 2025<br/>GPA: 8.43</p>
+      <p>SNS College of Engineering <br/>Graduation: May 2025<br/>GPA: 8.43</p>
     </div>
   </div>
 </section>
 
 <section id="contact">
   <h2 class="section-title">Contact</h2>
-  <p>📧 <a href="mailto:preethiansi08@gmail.com" style="color:#00ffff;">preethiansi08@gmail.com</a> | 📱 +91 63836 70965</p>
+  <p>📧 <a href="mailto:preethiansi08@gmail.com" style="color:#00ffff;">preethiansi08@gmail.com</a></p>
+  <p>📱 +91 63836 70965</p>
+  <p>🔗 <a href="https://www.linkedin.com/in/preethi-anselin-47b130219/" target="_blank" style="color:#00ffff;">LinkedIn Profile</a></p>
 </section>
 
 <footer>
   &copy; 2025 Preethi Anselin J. All rights reserved.
 </footer>
+
+<!-- Particle.js Background -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.0/tsparticles.bundle.min.js"></script>
+<script>
+  tsParticles.load("tsparticles", {
+    background: { color: "#101010" },
+    fpsLimit: 60,
+    interactivity: {
+      events: { onHover: { enable: true, mode: "repulse" }, resize: true },
+      modes: { repulse: { distance: 100, duration: 0.4 } }
+    },
+    particles: {
+      color: { value: "#00ffff" },
+      links: { color: "#00ffff", distance: 150, enable: true, opacity: 0.5, width: 1 },
+      move: { enable: true, speed: 2 },
+      number: { value: 60, density: { enable: true, area: 800 } },
+      opacity: { value: 0.5 },
+      shape: { type: "circle" },
+      size: { value: 2 }
+    },
+    detectRetina: true
+  });
+</script>
 
 </body>
 </html>
